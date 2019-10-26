@@ -61,22 +61,22 @@ object WordCountPracticaI {
       filewriter.write(tf+", ")
       numFiles+=1
     }
-    filewriter.write("#Files("+numFiles+")")
+    filewriter.write("#Archivos("+numFiles+")")
 
     filewriter.write("\n****************\n")
-    // Ejecuta el conteo total de las palabras
+    // Ejecuta el conteo total de las palabras por archivo
     var totalWordsRead = 0
     for (tf <- textFiles){
       val text = env.readTextFile(args(0)+"/"+tf)
       val counts = text.flatMap{ _.toLowerCase.split("\\W+")}
         .map{(_,1)}
         .count()
-      filewriter.write(counts+",")
+      filewriter.write(tf+" #palabras = "+counts+",")
       totalWordsRead += counts.intValue
     }
 
     filewriter.write("\n****************")
-    filewriter.write("\n#TotalWordsRead("+totalWordsRead+")")
+    filewriter.write("\n#Total de Palabras ("+totalWordsRead+")")
     filewriter.write("\n****************")
 
     // Ejecuta el conteo por palabra
@@ -86,9 +86,10 @@ object WordCountPracticaI {
 
       val counts = text.flatMap{ _.toLowerCase.split("\\W+")}
         .map { (_, 1) }
-        .groupBy(1)
+        .groupBy(0)
         .sum(1)
       filewriter.write(counts.collect().mkString("\n"))
+      filewriter.write("\n****************")
     }
     filewriter.close()
   }
