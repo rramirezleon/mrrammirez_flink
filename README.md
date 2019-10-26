@@ -37,3 +37,11 @@ Archivo3
 
 palabra, valor
 
+***************************************************************************
+Cuando se ejecuta el programa:
+
+El programa leerá los archivos de la carpeta resources
+
+El archivo de salida se escribirá en resources/out/output.txt
+
+
