@@ -1,0 +1,15 @@
+Libro01.txt, Libro03.txt, Libro02.txt, #Files(3)
+****************
+1381,2075,2903,
+****************
+#TotalWordsRead(6359)
+****************
+Libro01.txt
+(ipsum,951)
+(molestie,430)
+Libro03.txt
+(curae,296)
+(,1779)
+Libro02.txt
+(nisi,926)
+(molestie,1977)
